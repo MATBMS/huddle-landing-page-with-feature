@@ -1,0 +1,26 @@
+/* ──────────────────────────────────────────
+   Design Tokens
+   Mirrors the values in design/style-guide.md.
+   ────────────────────────────────────────── */
+
+:root {
+  /* Colors — Primary */
+  --color-pink: hsl(322, 100%, 66%);
+
+  /* Colors — Neutral */
+  --color-very-pale-cyan: hsl(193, 100%, 96%);
+  --color-very-dark-cyan: hsl(192, 100%, 9%);
+  --color-grayish-blue: hsl(208, 11%, 55%);
+
+  /* Typography — families */
+  --font-family-heading: "Poppins", sans-serif;
+  --font-family-body: "Open Sans", sans-serif;
+
+  /* Typography — body copy */
+  --font-size-body: 18px;
+
+  /* Typography — weights */
+  --font-weight-regular: 400;     /* Open Sans body */
+  --font-weight-bold: 700;        /* Open Sans CTA / emphasis */
+  --font-weight-heading: 600;     /* Poppins headings */
+}

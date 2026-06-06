@@ -21,7 +21,7 @@ This is a solution to the [Huddle landing page with alternating feature blocks c
 ### Links
 
 - [Solution URL](https://github.com/MATBMS/huddle-landing-page-with-feature)
-- [Live Site URL](https://matbms-huddle-landing-page-with-feature.netlify.app/)
+- [Live Site URL](https://matbms-huddle-landing-page-feature.netlify.app/)
 
 ## My process
 
