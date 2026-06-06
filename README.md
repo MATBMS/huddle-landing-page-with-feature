@@ -40,3 +40,5 @@ I want to be told immediately when my attempt to sign up can't go through,<br>
 so that I understand my sign-up didn't fail silently and know to try later.
 
 ### What I learned
+
+This challenge didn't teach me a brand-new technique — it was mostly reps on things I'd already practised: CSS custom properties, Flexbox and Grid, a mobile-first workflow, and a small vanilla-JS interaction. The value was building a full multi-section landing page end to end and keeping the CSS organised across `base/`, `components/` and `pages/`.

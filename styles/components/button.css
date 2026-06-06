@@ -31,8 +31,7 @@
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover: text fades to grayish-blue (background stays white). */
-.button--light:hover,
+/* Keyboard focus: same colour shift as hover, on every device. */
 .button--light:focus-visible {
   color: var(--color-grayish-blue);
 }
@@ -46,10 +45,21 @@
   box-shadow: 0 3px 6px 1px rgba(255, 82, 193, 0.25);
 }
 
-/* Hover: lighten the pink. */
-.button--primary:hover,
+/* Keyboard focus: lighten the pink, on every device. */
 .button--primary:focus-visible {
   background-color: var(--color-pink-light);
+}
+
+/* Hover effects only where there's a real pointer. On touch screens a tap
+   can register as a hover and leave the lightened state stuck on. */
+@media (hover: hover) {
+  .button--light:hover {
+    color: var(--color-grayish-blue);
+  }
+
+  .button--primary:hover {
+    background-color: var(--color-pink-light);
+  }
 }
 
 /* Desktop ------------------------------------------------------------- */

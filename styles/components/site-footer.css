@@ -68,8 +68,11 @@
   text-decoration: none;
 }
 
-.footer-nav__list a:hover {
-  text-decoration: underline;
+/* Hover only on real-pointer devices, so a tap doesn't leave it stuck. */
+@media (hover: hover) {
+  .footer-nav__list a:hover {
+    text-decoration: underline;
+  }
 }
 
 .footer-nav__list a:focus-visible {
@@ -99,9 +102,12 @@
   transition: color 150ms ease, border-color 150ms ease;
 }
 
-/* Hover: the glyph turns pink; the circle stays white. */
-.social-links__link:hover {
-  color: var(--color-pink);
+/* Hover: the glyph turns pink; the circle stays white.
+   Gated to real-pointer devices so a tap doesn't leave it stuck. */
+@media (hover: hover) {
+  .social-links__link:hover {
+    color: var(--color-pink);
+  }
 }
 
 .social-links__link:focus-visible {
