@@ -35,8 +35,8 @@ This is a solution to the [Huddle landing page with alternating feature blocks c
 
 ### Extra feature
 
-As a User,<br>
-I need to be able to [...],<br>
-So that I can [...].
+As a first-time visitor interested in joining Huddle,<br>
+I want to be told immediately when my attempt to sign up can't go through,<br>
+so that I understand my sign-up didn't fail silently and know to try later.
 
 ### What I learned

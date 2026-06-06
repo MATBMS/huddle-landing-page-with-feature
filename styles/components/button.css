@@ -22,10 +22,10 @@
   outline-offset: 3px;
 }
 
-/* Light pill — header "Try It Free". */
+/* Light pill — header "Try It Free". Small on mobile (~96×24, 10px). */
 .button--light {
-  padding: 0.4rem 1.5rem;
-  font-size: 0.75rem;
+  padding: 0.35rem 1.25rem;
+  font-size: 0.625rem;
   color: var(--color-very-dark-cyan);
   background-color: #fff;
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);

@@ -118,16 +118,19 @@
 
 /* Desktop ------------------------------------------------------------- */
 @media (min-width: 64rem) {
-  /* Four regions across one row band:
-       logo + contact (left) | nav columns | social + copyright (right).
-     The nav element spans both rows and lays its two lists side by side. */
+  /* The logo sits alone on the first row; contact, the nav columns and the
+     social icons all start together on the second row, with the copyright
+     dropped to the bottom-right. Contact and nav span the two lower rows so
+     everything top-aligns on the second row rather than against the logo. */
   .site-footer {
     display: grid;
     grid-template-columns: minmax(0, 22rem) 1fr auto;
     grid-template-areas:
-      "logo    nav social"
-      "contact nav copyright";
-    column-gap: 4rem;
+      "logo    .    ."
+      "contact nav  social"
+      "contact nav  copyright";
+    /* 130px between the contact column and the nav block, per the design. */
+    column-gap: 8.125rem;
     align-items: start;
     padding: 9rem max(5rem, (100% - 77rem) / 2) 4rem;
   }
@@ -145,7 +148,8 @@
   .site-footer__nav {
     grid-area: nav;
     display: flex;
-    gap: 6rem;
+    /* 140px between the two link columns, per the design. */
+    gap: 8.75rem;
     margin-bottom: 0;
   }
 
@@ -156,7 +160,7 @@
 
   .social-links {
     grid-area: social;
-    justify-self: end;
+    justify-self: start;
     margin-bottom: 0;
   }
 

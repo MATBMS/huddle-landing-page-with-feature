@@ -1,0 +1,56 @@
+/* ──────────────────────────────────────────
+   Community-full popup (feat-01)
+   Fixed top-right toast shown when a visitor
+   clicks any call-to-action button. Hidden by
+   default; script.js toggles .popup--is-visible.
+   Slides in from the right + fades; the motion is
+   suppressed for users who prefer reduced motion.
+   ────────────────────────────────────────── */
+
+.popup {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+  max-width: 20rem;
+  padding: 1rem 1.25rem;
+
+  /* Matches the header "Try It Free" button, with a pink accent edge. */
+  background-color: #fff;
+  color: var(--color-very-dark-cyan);
+  border-left: 4px solid var(--color-pink);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  line-height: 1.4;
+
+  /* Hidden state: faded out and parked off-screen to the right */
+  opacity: 0;
+  transform: translateX(calc(100% + 1.5rem));
+  visibility: hidden;
+
+  /* Slide + fade. The visibility delay keeps the element rendered
+     until the slide-out finishes, so it doesn't vanish mid-animation. */
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 0s linear 300ms;
+}
+
+.popup--is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+  transition:
+    opacity 300ms ease,
+    transform 300ms ease,
+    visibility 0s linear 0s;
+}
+
+/* AC: with reduced-motion, appear/disappear instantly — no slide or fade */
+@media (prefers-reduced-motion: reduce) {
+  .popup,
+  .popup--is-visible {
+    transform: none;
+    transition: none;
+  }
+}

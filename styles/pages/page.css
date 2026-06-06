@@ -20,13 +20,19 @@
 .hero__title {
   font-size: 1.5rem;
   line-height: 1.5;
-  margin: 1.5rem 0;
+  /* Cap to the design's 280px so the heading wraps to two balanced lines
+     ("Build The Community" / "Your Fans Will Love"); auto margins re-centre it. */
+  max-width: 17.5rem;
+  margin: 1.5rem auto;
 }
 
 .hero__text {
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
+  /* Cap to the design's 304px so the paragraph wraps like the mockup;
+     auto side margins re-centre it. */
+  max-width: 19rem;
+  margin: 0 auto 2rem;
 }
 
 .hero__image {
@@ -76,7 +82,7 @@
   .hero__title {
     grid-column: 1;
     grid-row: 1;
-    max-width: 34rem;
+    max-width: 30rem;
     font-size: 2.5rem;
     margin: 0 0 1.5rem;
   }
@@ -84,9 +90,14 @@
   .hero__text {
     grid-column: 1;
     grid-row: 2;
-    max-width: 30rem;
+    /* Cap to the design's 520px so the paragraph wraps to the mockup's
+       three lines. */
+    max-width: 32.5rem;
     font-size: 1.125rem;
-    margin-bottom: 2rem;
+    /* Full shorthand resets the mobile rule's `auto` side margins, so the
+       paragraph sits flush-left under the heading instead of centred in
+       its grid column. */
+    margin: 0 0 2rem;
   }
 
   .hero .button {
@@ -110,7 +121,9 @@
   .features {
     max-width: 77rem;
     margin: 10rem auto 0;
-    padding-inline: 2rem;
+    /* Full shorthand resets the mobile rule's 60px top padding, so the 160px
+       top margin alone sets the gap between the hero and the first feature. */
+    padding: 0 2rem;
   }
 
   /* CTA card: wider, and overlapping a larger slice of the footer. */

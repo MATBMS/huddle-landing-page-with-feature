@@ -17,8 +17,14 @@
 }
 
 .site-header__logo img {
-  /* Logo is ~104px wide in the mobile design. */
+  /* Logo is 104px wide in the mobile design. We size by width and let height
+     follow the SVG's own ratio (240:39) — it lands ~0.9px off the design's 16px
+     because the asset's proportions differ slightly from the design box, but
+     this keeps the logo undistorted. */
   width: 6.5rem;
+  /* `block` removes the inline descender gap below the image, which would
+     otherwise make the anchor taller than the logo and nudge it visually high. */
+  display: block;
 }
 
 /* Desktop ------------------------------------------------------------- */
@@ -31,6 +37,7 @@
   }
 
   .site-header__logo img {
-    width: 9.5rem;
+    /* 200px wide in the desktop design (height follows the logo's own ratio). */
+    width: 12.5rem;
   }
 }
