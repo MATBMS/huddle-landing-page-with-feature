@@ -1,0 +1,25 @@
+/* ──────────────────────────────────────────
+   Page-wide base
+   Global background and shared utilities that
+   don't belong to any single component.
+   ────────────────────────────────────────── */
+
+body {
+  background-color: #fff;
+  /* The hero's decorative SVG can bleed slightly past 100vw on small
+     screens — clip it so it never triggers a horizontal scrollbar. */
+  overflow-x: hidden;
+}
+
+/* Hide an element visually while keeping it available to screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}

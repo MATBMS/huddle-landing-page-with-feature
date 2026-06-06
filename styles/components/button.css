@@ -1,0 +1,61 @@
+/* ──────────────────────────────────────────
+   Button
+   Pill-shaped call-to-action. Base styles are
+   shared; modifiers set colour and size.
+   ────────────────────────────────────────── */
+
+.button {
+  display: inline-block;
+  border: 0;
+  border-radius: 999px;            /* fully rounded pill */
+  font-family: var(--font-family-body);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+/* Focus ring for keyboard users (mouse clicks stay clean). */
+.button:focus-visible {
+  outline: 2px solid var(--color-pink);
+  outline-offset: 3px;
+}
+
+/* Light pill — header "Try It Free". */
+.button--light {
+  padding: 0.4rem 1.5rem;
+  font-size: 0.75rem;
+  color: var(--color-very-dark-cyan);
+  background-color: #fff;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover: text fades to grayish-blue (background stays white). */
+.button--light:hover,
+.button--light:focus-visible {
+  color: var(--color-grayish-blue);
+}
+
+/* Pink pill — primary "Get Started For Free". */
+.button--primary {
+  padding: 0.9rem 4rem;
+  font-size: 0.875rem;
+  color: #fff;
+  background-color: var(--color-pink);
+  box-shadow: 0 3px 6px 1px rgba(255, 82, 193, 0.25);
+}
+
+/* Hover: lighten the pink. */
+.button--primary:hover,
+.button--primary:focus-visible {
+  background-color: var(--color-pink-light);
+}
+
+/* Desktop ------------------------------------------------------------- */
+@media (min-width: 64rem) {
+  .button--light {
+    padding: 0.85rem 2.5rem;
+    font-size: 0.875rem;
+  }
+}

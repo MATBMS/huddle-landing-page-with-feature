@@ -1,0 +1,121 @@
+/* ──────────────────────────────────────────
+   Page layout
+   Arranges the landing-page sections: the hero
+   backdrop, the stack of feature cards, and the
+   CTA card that overlaps the footer.
+   ────────────────────────────────────────── */
+
+/* Hero ---------------------------------------------------------------- */
+
+.hero {
+  text-align: center;
+  padding: 1.5rem 1.5rem 4rem;
+  background-color: var(--color-very-pale-cyan);
+  background-image: url("../../images/bg-hero-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
+.hero__title {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 1.5rem 0;
+}
+
+.hero__text {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  margin-top: 3.5rem;
+}
+
+/* Feature cards ------------------------------------------------------- */
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 3.75rem 1.25rem 0;
+}
+
+/* Call to action ------------------------------------------------------ */
+
+/* The card is pulled down so its lower half sits over the footer.
+   z-index keeps it above the footer's dark background, and the footer's
+   large top padding (in site-footer.css) leaves room for the overlap. */
+.call-to-action {
+  position: relative;
+  z-index: 1;
+  max-width: 22rem;
+  margin: 6rem auto -5rem;
+}
+
+/* Desktop ------------------------------------------------------------- */
+@media (min-width: 64rem) {
+  /* Hero: text column on the left, dashboard mockup on the right.
+     The image spans all three text rows so it stays centred against
+     the heading/paragraph/button stack. */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    column-gap: 2rem;
+    text-align: left;
+    padding: 5rem max(5rem, (100% - 77rem) / 2) 7rem;
+    background-image: url("../../images/bg-hero-desktop.svg");
+    background-position: top center;
+    background-size: cover;
+  }
+
+  .hero__title {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 34rem;
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem;
+  }
+
+  .hero__text {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: 30rem;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero .button {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: start;
+    min-width: 17.5rem;
+    padding-block: 1rem;
+  }
+
+  .hero__image {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    align-self: center;
+    width: 100%;
+    margin: 0;
+  }
+
+  /* Feature cards: cap to the shared content width and add breathing
+     room below the hero. */
+  .features {
+    max-width: 77rem;
+    margin: 10rem auto 0;
+    padding-inline: 2rem;
+  }
+
+  /* CTA card: wider, and overlapping a larger slice of the footer. */
+  .call-to-action {
+    max-width: 50rem;
+    margin: 10rem auto -6rem;
+  }
+}

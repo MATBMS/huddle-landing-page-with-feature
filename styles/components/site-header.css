@@ -1,0 +1,36 @@
+/* ──────────────────────────────────────────
+   Site header
+   Logo + "Try It Free" pill, sitting on the
+   pale-cyan hero backdrop.
+   ────────────────────────────────────────── */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  background-color: var(--color-very-pale-cyan);
+}
+
+.site-header__logo {
+  display: inline-block;
+}
+
+.site-header__logo img {
+  /* Logo is ~104px wide in the mobile design. */
+  width: 6.5rem;
+}
+
+/* Desktop ------------------------------------------------------------- */
+@media (min-width: 64rem) {
+  .site-header {
+    /* Centre content to the shared max width, with a 5rem min gutter.
+       Keeps the pale-cyan background full-bleed while the logo/button
+       line up with the cards below. */
+    padding: 3rem max(5rem, (100% - 77rem) / 2);
+  }
+
+  .site-header__logo img {
+    width: 9.5rem;
+  }
+}

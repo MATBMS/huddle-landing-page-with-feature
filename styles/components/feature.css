@@ -1,0 +1,82 @@
+/* ──────────────────────────────────────────
+   Feature card
+   White rounded card holding one alternating
+   feature block (illustration + text).
+   On mobile everything is centred and stacked.
+   ────────────────────────────────────────── */
+
+.feature {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.07);
+  padding: 3.5rem 2.25rem 2.5rem;
+  text-align: center;
+}
+
+.feature__image {
+  display: block;
+  width: 100%;
+  max-width: 15rem;
+  margin: 0 auto 3rem;
+}
+
+.feature__title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.feature__text {
+  color: var(--color-grayish-blue);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Desktop ------------------------------------------------------------- */
+@media (min-width: 64rem) {
+  /* Two columns: text on one side, illustration on the other.
+     The image spans both text rows so it stays vertically centred,
+     and align-content centres the text block within the tall card. */
+  .feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    align-content: center;
+    column-gap: 7rem;
+    min-height: 27.5rem;
+    padding: 3rem 7rem;
+    text-align: left;
+  }
+
+  .feature__image {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    max-width: 26rem;
+    margin: 0;
+  }
+
+  .feature__title {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .feature__text {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 1.125rem;
+  }
+
+  /* Alternate the layout: even cards put the illustration on the left. */
+  .feature:nth-child(even) .feature__image {
+    grid-column: 1;
+  }
+
+  .feature:nth-child(even) .feature__title,
+  .feature:nth-child(even) .feature__text {
+    grid-column: 2;
+  }
+}

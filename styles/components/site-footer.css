@@ -1,0 +1,170 @@
+/* ──────────────────────────────────────────
+   Site footer
+   Dark-cyan panel: logo, contact details, link
+   columns, social icons and copyright.
+   The big top padding leaves room for the CTA
+   card that overlaps from above (see page.css).
+   ────────────────────────────────────────── */
+
+.site-footer {
+  position: relative;
+  background-color: var(--color-very-dark-cyan);
+  color: #fff;
+  padding: 8rem 1.5rem 2.5rem;
+  font-size: 0.875rem;
+}
+
+.site-footer__logo {
+  /* The supplied logo is coloured; this filter recolours it to solid
+     white so it reads on the dark footer without a second asset. */
+  filter: brightness(0) invert(1);
+  width: 10.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Contact details ----------------------------------------------------- */
+
+.site-footer__contact {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;   /* keeps icon top-aligned next to wrapping text */
+  gap: 1rem;
+  line-height: 1.5;
+}
+
+.contact-item img {
+  /* Nudge the icons down so they sit on the text's first line. */
+  margin-top: 0.4rem;
+  flex-shrink: 0;
+}
+
+/* Navigation columns -------------------------------------------------- */
+
+.site-footer__nav {
+  margin-bottom: 3rem;
+}
+
+.footer-nav__list {
+  list-style: none;
+}
+
+.footer-nav__list:first-child {
+  margin-bottom: 1rem;
+}
+
+.footer-nav__list li + li {
+  margin-top: 1rem;
+}
+
+.footer-nav__list a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-nav__list a:hover {
+  text-decoration: underline;
+}
+
+.footer-nav__list a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* Social links -------------------------------------------------------- */
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  transition: color 150ms ease, border-color 150ms ease;
+}
+
+/* Hover: the glyph turns pink; the circle stays white. */
+.social-links__link:hover {
+  color: var(--color-pink);
+}
+
+.social-links__link:focus-visible {
+  color: var(--color-pink);
+  outline-offset: 3px;
+}
+
+/* Copyright ----------------------------------------------------------- */
+
+.site-footer__copyright {
+  text-align: center;
+  font-size: 0.6875rem;
+}
+
+/* Desktop ------------------------------------------------------------- */
+@media (min-width: 64rem) {
+  /* Four regions across one row band:
+       logo + contact (left) | nav columns | social + copyright (right).
+     The nav element spans both rows and lays its two lists side by side. */
+  .site-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 22rem) 1fr auto;
+    grid-template-areas:
+      "logo    nav social"
+      "contact nav copyright";
+    column-gap: 4rem;
+    align-items: start;
+    padding: 9rem max(5rem, (100% - 77rem) / 2) 4rem;
+  }
+
+  .site-footer__logo {
+    grid-area: logo;
+    margin-bottom: 2rem;
+  }
+
+  .site-footer__contact {
+    grid-area: contact;
+    margin-bottom: 0;
+  }
+
+  .site-footer__nav {
+    grid-area: nav;
+    display: flex;
+    gap: 6rem;
+    margin-bottom: 0;
+  }
+
+  /* Each list is its own column now, so drop the mobile stacking margin. */
+  .footer-nav__list:first-child {
+    margin-bottom: 0;
+  }
+
+  .social-links {
+    grid-area: social;
+    justify-self: end;
+    margin-bottom: 0;
+  }
+
+  .site-footer__copyright {
+    grid-area: copyright;
+    justify-self: end;
+    align-self: end;
+    text-align: right;
+    font-size: 0.75rem;
+  }
+}

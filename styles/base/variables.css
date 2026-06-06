@@ -6,6 +6,7 @@
 :root {
   /* Colors — Primary */
   --color-pink: hsl(322, 100%, 66%);
+  --color-pink-light: hsl(322, 100%, 80%);   /* button hover state */
 
   /* Colors — Neutral */
   --color-very-pale-cyan: hsl(193, 100%, 96%);

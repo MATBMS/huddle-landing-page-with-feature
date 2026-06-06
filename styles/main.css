@@ -1,5 +1,10 @@
 @import url("base/reset.css");
 @import url("base/variables.css");
 @import url("base/typography.css");
+@import url("base/page.css");
 @import url("components/button.css");
+@import url("components/site-header.css");
+@import url("components/feature.css");
+@import url("components/call-to-action.css");
+@import url("components/site-footer.css");
 @import url("pages/page.css");
